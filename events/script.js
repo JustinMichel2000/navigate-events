@@ -3,6 +3,8 @@ let longname = document.querySelector(".displayedsquare-wrapper");
 
 let actionlog = document.querySelector("h2");
 
+let body = document.querySelector("body");
+
 
 const _initTime = Date.now()
 
@@ -38,6 +40,37 @@ for (let actionSquare of actionSquares) {
 }
 
 
+
+
+
+
+function k (keypress){
+
+    console.log(keypress);
+
+    if (keypress.keyCode == 32) {
+
+        color();
+       
+    }
+}
+
+function color() {
+    
+    let randomBetween = (min, max) =>
+    min + Math.floor(Math.random() * (max - min + 1));
+    
+    let r = randomBetween(0, 255);
+    let g = randomBetween(0, 255);
+    let b = randomBetween(0, 255);
+    
+    let rgb = `rgb(${r},${g},${b})`;
+    
+    body.style.backgroundColor = rgb;
+    
+     }
+
+body.addEventListener("keypress" , k);
 
 
 
